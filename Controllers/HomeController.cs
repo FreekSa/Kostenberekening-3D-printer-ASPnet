@@ -35,6 +35,11 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        public IActionResult FilamentenLijst()
+        {
+            return View();
+        }
+
         //public decimal KostPerMeter()
         //{
             
