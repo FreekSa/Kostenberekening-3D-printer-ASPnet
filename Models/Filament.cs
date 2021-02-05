@@ -24,14 +24,12 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
     }
     public class Filament
     {
+        public int ID { get; set; }
         public Types Type { get; set; }
+        public Kleuren Kleur { get; set; }
         public decimal KostPerRol { get; set; }
         public int AantalMeter { get => 330; }
 
-        public decimal KostPerMeter()
-        {
-            decimal kostPermeter = KostPerRol / AantalMeter;
-            return kostPermeter;
-        }
+        
     }
 }

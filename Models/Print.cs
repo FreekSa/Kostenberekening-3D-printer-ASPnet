@@ -10,16 +10,16 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
         decimal Duurtijd { get; set; }
         int AantalMeterPrint { get; set; }
 
-        public Print(string type, decimal kostPerRol, int aantalMeterPrint, decimal duurtijd) : base(type, kostPerRol)
+        public Print(string type, decimal kostPerRol, int aantalMeterPrint, decimal duurtijd)/* : base(type, kostPerRol)*/
         {
             Duurtijd = duurtijd;
             AantalMeterPrint = aantalMeterPrint;
         }
 
-        public virtual decimal BerekenKostprijs()
-        {
-            var kostPerPrint = KostPerMeter() * AantalMeterPrint + 0.0534m * (Duurtijd / 60);
-            return kostPerPrint;                                                               //0.0534 = kost per kwh (elektriciteit)
-        }
+        //public decimal BerekenKostprijs()
+        //{
+        //    var kostPerPrint = KostPerMeter() * AantalMeterPrint + 0.0534m * (Duurtijd / 60);
+        //    return kostPerPrint;                                                               //0.0534 = kost per kwh (elektriciteit)
+        //}
     }
 }

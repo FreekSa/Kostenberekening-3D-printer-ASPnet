@@ -1,4 +1,5 @@
 ﻿using Kostenberekening_3D_printer_ASPnet.Models;
+using Kostenberekening_3D_printer_ASPnet.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,11 +12,11 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private FilamentService _filamentService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(FilamentService filamentService)
         {
-            _logger = logger;
+            _filamentService = filamentService;
         }
 
         public IActionResult Index()
@@ -33,5 +34,12 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        //public decimal KostPerMeter()
+        //{
+            
+        //    decimal kostPermeter = KostPerRol / AantalMeter;
+        //    return kostPermeter;
+        //}
     }
 }
