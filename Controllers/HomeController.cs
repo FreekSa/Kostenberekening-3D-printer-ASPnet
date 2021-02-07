@@ -79,6 +79,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
 
         public IActionResult BerekenKost()
         {
+
             return View();
         }
 

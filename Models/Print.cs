@@ -16,10 +16,10 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
             AantalMeterPrint = aantalMeterPrint;
         }
 
-        //public decimal BerekenKostprijs()
-        //{
-        //    var kostPerPrint = KostPerMeter() * AantalMeterPrint + 0.0534m * (Duurtijd / 60);
-        //    return kostPerPrint;                                                               //0.0534 = kost per kwh (elektriciteit)
-        //}
+        public decimal BerekenKostprijs()
+        {
+            var kostPerPrint = (KostPerRol / AantalMeter) * AantalMeterPrint + 0.0534m * (Duurtijd / 60);
+            return kostPerPrint;                                                               //0.0534 = kost per kwh (elektriciteit)
+        }
     }
 }
