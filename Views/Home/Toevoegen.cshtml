@@ -3,3 +3,12 @@
     ViewBag.Title = "Toevoegen";
 }
 <h3>Filament toevoegen</h3>
+<form asp-action="Toevoegen">
+    <label asp-for="Type"></label>
+    <input asp-for="Type" />
+    <label asp-for="Kleur"></label>
+    <input asp-for="Kleur"/>
+    <label asp-for="KostPerRol"></label>
+    <input asp-for="KostPerRol" />
+    <input type="submit" value="Toevoegen" class="btn btn-primary"/>
+</form>
