@@ -1,37 +1,15 @@
-﻿@model List<Filament>
+﻿
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h2 class="display-4">
-        Lijst met filamenten
+        Menu
     </h2>
-    <br /><br />
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Type</th>
-                <th>Kleur</th>
-                <th>Kost per rol</th>
-                <th>Acties</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var filament in Model)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(f => filament.ID)</td>
-                    <td>@filament.Type</td>
-                    <td>@filament.Kleur</td>
-                    <td>€ @Html.DisplayFor(f => filament.KostPerRol)</td>
-                    <td>
-                        <a asp-action="Verwijderen" asp-route-id="@filament.ID">Verwijderen</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <p><a asp-action ="Toevoegen" class="btn btn-primary">Filament toevoegen</a></p>
-</div>
+    <br />
+    <br />
+    <a asp-action="FilamentenLijst" asp-controller="Home">Toon een lijst met filamenten</a>
+    <br />
+    <br />
+    <a asp-action="BerekenKost" asp-controller="Home">Bereken je kostprijs</a>

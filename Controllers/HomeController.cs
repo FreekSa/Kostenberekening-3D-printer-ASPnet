@@ -22,8 +22,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
 
         public IActionResult Index()
         {
-            var filamenten = _filamentService.FindAll();
-            return View(filamenten);
+            return View();
         }
 
         public IActionResult Privacy()
@@ -39,7 +38,8 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
 
         public IActionResult FilamentenLijst()
         {
-            return View();
+            var filamenten = _filamentService.FindAll();
+            return View(filamenten);
         }
 
         public IActionResult Verwijderen(int id)
@@ -74,7 +74,12 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
         public IActionResult Toevoegen(Filament f)
         {
             _filamentService.Add(f);
-            return RedirectToAction("Index");
+            return RedirectToAction("Filamentenlijst");
+        }
+
+        public IActionResult BerekenKost()
+        {
+            return View();
         }
 
         //public decimal KostPerMeter()

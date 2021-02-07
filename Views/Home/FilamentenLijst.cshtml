@@ -1,7 +1,37 @@
-﻿
+﻿@model List<Filament>
 @{
-    ViewData["Title"] = "FilamentenLijst";
+    ViewBag.Title = "Filamentenlijst";
 }
 
-<h1>FilamentenLijst</h1>
-
+<div class="text-left">
+    <h2 class="display-4">
+        Lijst met filamenten
+    </h2>
+    <br /><br />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Kleur</th>
+                <th>Kost per rol</th>
+                <th>Acties</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var filament in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(f => filament.ID)</td>
+                    <td>@filament.Type</td>
+                    <td>@filament.Kleur</td>
+                    <td>€ @Html.DisplayFor(f => filament.KostPerRol)</td>
+                    <td>
+                        <a asp-action="Verwijderen" asp-route-id="@filament.ID">Verwijderen</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p><a asp-action="Toevoegen" class="btn btn-primary">Filament toevoegen</a></p>
+</div>

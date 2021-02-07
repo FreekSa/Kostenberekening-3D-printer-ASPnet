@@ -29,7 +29,5 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
         public Kleuren Kleur { get; set; }
         public decimal KostPerRol { get; set; }
         public int AantalMeter { get => 330; }
-
-        
     }
 }
