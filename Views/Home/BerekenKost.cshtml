@@ -1,7 +1,20 @@
-﻿
+﻿@model Print
 @{
-    ViewData["Title"] = "BerekenKost";
+    ViewBag.Title = "BerekenKost";
 }
 
 <h2>Bereken hier je kostprijs</h2>
 
+<form asp-action="BerekenKost">
+    <label asp-for="KostPerRol"></label>
+    <input asp-for="KostPerRol" />
+    <label asp-for="AantalMeterPrint"></label>
+    <input asp-for="AantalMeterPrint" />
+    <label asp-for="Duurtijd"> in minuten</label>
+    <input asp-for="Duurtijd" />
+    <span>Kost per print:</span>
+</form>
+
+
+<!--var kostPerPrint = (KostPerRol / AantalMeter) * AantalMeterPrint + 0.0534m * (Duurtijd / 60);
+            return kostPerPrint;-->

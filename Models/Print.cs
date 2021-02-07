@@ -7,8 +7,8 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
 {
     public class Print : Filament
     {
-        decimal Duurtijd { get; set; }
-        int AantalMeterPrint { get; set; }
+        public decimal Duurtijd { get; set; }
+        public int AantalMeterPrint { get; set; }
 
         public Print(string type, decimal kostPerRol, int aantalMeterPrint, decimal duurtijd)/* : base(type, kostPerRol)*/
         {
