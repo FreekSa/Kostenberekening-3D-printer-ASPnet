@@ -12,9 +12,10 @@
     <input asp-for="AantalMeterPrint" />
     <label asp-for="Duurtijd"> in minuten</label>
     <input asp-for="Duurtijd" />
+    <input type="submit" value="Berekenen " class="btn btn-primary" />
     @*@{
-        var kostPerPrint = (Model.KostPerRol / 330) * Model.AantalMeterPrint + (0.0534m * Model.Duurtijd / 60);
-    }*@
+            var kostPerPrint = (Model.KostPerRol / 330) * Model.AantalMeterPrint + (0.0534m * Model.Duurtijd / 60);
+        }*@
     <span>Kost per print: @*@kostPerPrint*@</span>
 </form>
 
