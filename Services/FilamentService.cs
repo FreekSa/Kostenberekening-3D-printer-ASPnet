@@ -46,5 +46,11 @@ namespace Kostenberekening_3D_printer_ASPnet.Services
         {
             filamenten.Remove(id);
         }
+
+        public void Add(Filament f)
+        {
+            f.ID = filamenten.Keys.Max() + 1;
+            filamenten.Add(f.ID, f);
+        }
     }
 }

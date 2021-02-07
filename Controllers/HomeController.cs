@@ -63,6 +63,13 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
             return View(filament);
         }
 
+        [HttpGet]
+        public IActionResult Toevoegen()
+        {
+            var filament = new Filament();
+            return View(filament);
+        }
+
         //public decimal KostPerMeter()
         //{
             
