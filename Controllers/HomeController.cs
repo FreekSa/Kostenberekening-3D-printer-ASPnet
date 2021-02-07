@@ -2,6 +2,7 @@
 using Kostenberekening_3D_printer_ASPnet.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,7 +22,8 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var filamenten = _filamentService.FindAll();
+            return View(filamenten);
         }
 
         public IActionResult Privacy()
@@ -38,6 +40,27 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
         public IActionResult FilamentenLijst()
         {
             return View();
+        }
+
+        public IActionResult Verwijderen(int id)
+        {
+            var filament = _filamentService.Read(id);
+            return View(filament);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var filament = _filamentService.Read(id);
+            this.TempData["filament"] = JsonConvert.SerializeObject(filament);
+            _filamentService.Delete(id);
+            return Redirect("~/Home/Verwijderd");
+        }
+
+        public IActionResult Verwijderd()
+        {
+            var filament = JsonConvert.DeserializeObject<Filament>((string)this.TempData["filament"]);
+            return View(filament);
         }
 
         //public decimal KostPerMeter()

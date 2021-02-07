@@ -1,9 +1,17 @@
-﻿@{
+﻿@model List<Filament>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Bereken hier je kostprijs</h1>
+    <h2 class="display-4">Lijst met filamenten</h2>
     <br /><br />
-    
+    @foreach (var filament in Model)
+    {
+        var url = "Filament.Verwijderen" + filament.ID;
+        <p>
+            @Html.DisplayFor(m => filament.ID) @filament.Type @filament.Kleur @filament.KostPerRol
+            <a asp-action="Verwijderen" asp-route-id="@filament.ID">Verwijderen</a>
+        </p>
+    }
 </div>
