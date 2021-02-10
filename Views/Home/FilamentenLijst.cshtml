@@ -15,6 +15,8 @@
                 <th>Type</th>
                 <th>Kleur</th>
                 <th>Kost per rol</th>
+                <th>Gewicht</th>
+                <th>Aantal meter</th>
                 <th>Acties</th>
             </tr>
         </thead>
@@ -26,6 +28,8 @@
                     <td>@filament.Type</td>
                     <td>@filament.Kleur</td>
                     <td>€ @Html.DisplayFor(f => filament.KostPerRol)</td>
+                    <td>@filament.AantalKg kg</td>
+                    <td>@filament.AantalMeter</td>
                     <td>
                         <a asp-action="Verwijderen" asp-route-id="@filament.ID">Verwijderen</a>
                     </td>

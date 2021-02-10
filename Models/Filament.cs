@@ -10,7 +10,8 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
         PLA,
         ABS,
         PETG,
-        TPE
+        TPE,
+        Nylon
     }
     public enum Kleuren
     {
@@ -22,12 +23,14 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
         Groen,
         Transparant
     }
+
     public class Filament
     {
         public int ID { get; set; }
         public Types Type { get; set; }
         public Kleuren Kleur { get; set; }
         public decimal KostPerRol { get; set; }
-        public decimal AantalMeter { get => 330; }
+        public decimal AantalKg { get; set; }
+        public decimal AantalMeter { get => AantalKg * 330m; }
     }
 }

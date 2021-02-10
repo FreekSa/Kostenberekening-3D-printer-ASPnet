@@ -16,21 +16,24 @@ namespace Kostenberekening_3D_printer_ASPnet.Services
                 ID = 1,
                 Type = Types.PLA,
                 Kleur = Kleuren.Groen,
-                KostPerRol = 19.5m
+                KostPerRol = 19.5m,
+                AantalKg = 0.5m
             };
             filamenten[2] = new Filament
             {
                 ID = 2,
                 Type = Types.PLA,
                 Kleur = Kleuren.Wit,
-                KostPerRol = 19.5m
+                KostPerRol = 19.5m,
+                AantalKg = 1m
             };
             filamenten[3] = new Filament
             {
                 ID = 3,
                 Type = Types.PETG,
                 Kleur = Kleuren.Geel,
-                KostPerRol = 19.5m
+                KostPerRol = 19.5m,
+                AantalKg = 1m
             };  
         }
 
