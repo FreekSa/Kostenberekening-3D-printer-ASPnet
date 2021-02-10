@@ -6,17 +6,15 @@
 <h2>Bereken hier je kostprijs</h2>
 
 <form asp-action="BerekenKost">
-    <label asp-for="KostPerRol"></label>
-    <input asp-for="KostPerRol" />
-    <label asp-for="AantalMeterPrint"></label>
-    <input asp-for="AantalMeterPrint" />
-    <label asp-for="Duurtijd"> in minuten</label>
-    <input asp-for="Duurtijd" />
-    <input type="submit" value="Berekenen " class="btn btn-primary" />
-    @*@{
-            var kostPerPrint = (Model.KostPerRol / 330) * Model.AantalMeterPrint + (0.0534m * Model.Duurtijd / 60);
-        }*@
+    <label asp-for="@Model.KostPerRol"></label>
+    <input asp-for="@Model.KostPerRol" />
+    <label asp-for="@Model.AantalMeterPrint"></label>
+    <input asp-for="@Model.AantalMeterPrint" />
+    <label asp-for="@Model.Duurtijd"> in minuten</label>
+    <input asp-for="@Model.Duurtijd" />
+    <input type="submit" value="Berekenen" class="btn btn-primary" />
 </form>
-    <span>Kost per print: @*@kostPerPrint*@</span>
+
+    <span>Kost per print: @Model.KostPerPrint</span>
 
 
