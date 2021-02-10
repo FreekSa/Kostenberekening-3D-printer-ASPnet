@@ -79,7 +79,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
 
         public IActionResult BerekenKost(Print p)
         {
-            p.KostPerPrint = (p.KostPerRol / 330) * p.AantalMeterPrint + (0.0534m * p.Duurtijd / 60);
+            p.KostPerPrint = (p.KostPerRol / 330) * p.AantalMeterPrint + (0.0534m * (p.Duurtijd / 60));
             return View(p);
         }
     }
