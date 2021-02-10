@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Kostenberekening_3D_printer_ASPnet</RootNamespace>
+    <UserSecretsId>c7d83a1b-e293-4118-b71a-ac4626098fad</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
