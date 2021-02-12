@@ -6,15 +6,15 @@
 <h2>Bereken hier je kostprijs</h2>
 
 <form asp-action="BerekenKost">
-    <label asp-for="@Model.KostPerRol"></label>
+    <label asp-for="@Model.KostPerRol">Kostprijs per rol: </label>
     <input asp-for="@Model.KostPerRol" />
-    <label asp-for="@Model.AantalMeterPrint"></label>
+    <label asp-for="@Model.AantalMeterPrint">Aantal meter: </label>
     <input asp-for="@Model.AantalMeterPrint" />
-    <label asp-for="@Model.Duurtijd"> in minuten</label>
+    <label asp-for="@Model.Duurtijd">Duurtijd in minuten: </label>
     <input asp-for="@Model.Duurtijd" />
     <input type="submit" value="Berekenen" class="btn btn-primary" />
 </form>
 
-    <span>Kost per print: @Model.KostPerPrint.ToString("0.00")</span>
+<span>Kost per print: @Html.DisplayFor(k => Model.KostPerPrint)</span>
 
 

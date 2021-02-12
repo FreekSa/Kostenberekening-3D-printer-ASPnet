@@ -3,7 +3,7 @@
     ViewBag.Title = "Toevoegen";
 }
 <h3>Filament toevoegen</h3>
-<form asp-action="Toevoegen">
+<form asp-action="Toevoegen" method="post">
     <label asp-for="Type"></label>
     <select asp-for="Type" asp-items="@new SelectList(Enum.GetNames((typeof(Types))))">
     </select>

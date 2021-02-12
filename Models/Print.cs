@@ -10,6 +10,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
     {
         public decimal Duurtijd { get; set; }
         public decimal AantalMeterPrint { get; set; }
+        [DisplayFormat(DataFormatString="{0:#.##}")]
         public decimal KostPerPrint { get; set; }
     }
 }
