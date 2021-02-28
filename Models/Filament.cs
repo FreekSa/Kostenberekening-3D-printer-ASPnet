@@ -10,7 +10,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
     public partial class Filament
     {
         public int Id { get; set; }
-        public int Type { get; set; }
+        public string Type { get; set; }
         public string Kleur { get; set; }
         public decimal KostPerRol { get; set; }
         public decimal AantalKg { get; set; }
