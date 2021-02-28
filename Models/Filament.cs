@@ -1,36 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace Kostenberekening_3D_printer_ASPnet.Models
 {
-    public enum Types
+    public partial class Filament
     {
-        PLA,
-        ABS,
-        PETG,
-        TPE,
-        Nylon
-    }
-    public enum Kleuren
-    {
-        Roze,
-        Geel,
-        Wit,
-        Oranje,
-        Blauw,
-        Groen,
-        Transparant
-    }
-
-    public class Filament
-    {
-        public int ID { get; set; }
-        public Types Type { get; set; }
-        public Kleuren Kleur { get; set; }
+        public int Id { get; set; }
+        public int Type { get; set; }
+        public string Kleur { get; set; }
         public decimal KostPerRol { get; set; }
         public decimal AantalKg { get; set; }
-        public decimal AantalMeter { get => AantalKg * 330m; }
     }
 }

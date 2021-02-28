@@ -8,10 +8,10 @@ namespace Kostenberekening_3D_printer_ASPnet.Services
 {
     public class FilamentService
     {
-        private Dictionary<int, Filament> filamenten = new Dictionary<int, Filament>();
+        private Dictionary<int, Filament1> filamenten = new Dictionary<int, Filament1>();
         public FilamentService()
         {
-            filamenten[1] = new Filament
+            filamenten[1] = new Filament1
             {
                 ID = 1,
                 Type = Types.PLA,
@@ -19,7 +19,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Services
                 KostPerRol = 19.5m,
                 AantalKg = 0.5m
             };
-            filamenten[2] = new Filament
+            filamenten[2] = new Filament1
             {
                 ID = 2,
                 Type = Types.PLA,
@@ -27,7 +27,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Services
                 KostPerRol = 19.5m,
                 AantalKg = 1m
             };
-            filamenten[3] = new Filament
+            filamenten[3] = new Filament1
             {
                 ID = 3,
                 Type = Types.PETG,
@@ -37,11 +37,11 @@ namespace Kostenberekening_3D_printer_ASPnet.Services
             };  
         }
 
-        public List<Filament> FindAll()
+        public List<Filament1> FindAll()
         {
             return filamenten.Values.ToList();
         }
-        public Filament Read(int id)
+        public Filament1 Read(int id)
         {
             return filamenten[id];
         }
@@ -50,7 +50,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Services
             filamenten.Remove(id);
         }
 
-        public void Add(Filament f)
+        public void Add(Filament1 f)
         {
             f.ID = filamenten.Keys.Max() + 1;
             filamenten.Add(f.ID, f);

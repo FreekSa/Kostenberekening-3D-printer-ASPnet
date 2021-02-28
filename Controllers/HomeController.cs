@@ -36,47 +36,6 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult FilamentenLijst()
-        {
-            var filamenten = _filamentService.FindAll();
-            return View(filamenten);
-        }
-
-        public IActionResult Verwijderen(int id)
-        {
-            var filament = _filamentService.Read(id);
-            return View(filament);
-        }
-
-        [HttpPost]
-        public IActionResult Delete(int id)
-        {
-            var filament = _filamentService.Read(id);
-            this.TempData["filament"] = JsonConvert.SerializeObject(filament);
-            _filamentService.Delete(id);
-            return Redirect("~/Home/Verwijderd");
-        }
-
-        public IActionResult Verwijderd()
-        {
-            var filament = JsonConvert.DeserializeObject<Filament>((string)this.TempData["filament"]);
-            return View(filament);
-        }
-
-        [HttpGet]
-        public IActionResult Toevoegen()
-        {
-            var filament = new Filament();
-            return View(filament);
-        }
-
-        [HttpPost]
-        public IActionResult Toevoegen(Filament f)
-        {
-            _filamentService.Add(f);
-            return RedirectToAction("Filamentenlijst");
-        }
-
         public IActionResult BerekenKost(Print p)
         {
             p.KostPerPrint = (p.KostPerRol / 330) * p.AantalMeterPrint + (0.0534m * (p.Duurtijd / 60));

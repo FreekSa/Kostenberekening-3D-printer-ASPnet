@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kostenberekening_3D_printer_ASPnet.Models
 {
-    public class Print : Filament
+    public class Print : Filament1
     {
         public decimal Duurtijd { get; set; }
         public decimal AantalMeterPrint { get; set; }

@@ -1,5 +1,7 @@
+using Kostenberekening_3D_printer_ASPnet.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,8 @@ namespace Kostenberekening_3D_printer_ASPnet
         {
             services.AddSingleton<Services.FilamentService>();
             services.AddControllersWithViews();
+            services.AddDbContext<FilamentenlijstContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Filamentenlijst")));
+            services.AddTransient<IFilamentenRepository, SQLFilamentenRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
