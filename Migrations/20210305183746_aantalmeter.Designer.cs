@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kostenberekening_3D_printer_ASPnet.Migrations
 {
     [DbContext(typeof(FilamentenlijstContext))]
-    [Migration("20210228201259_intnaarvarchar")]
-    partial class intnaarvarchar
+    [Migration("20210305183746_aantalmeter")]
+    partial class aantalmeter
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
                         .HasColumnType("decimal(18, 2)");
 
                     b.Property<decimal>("AantalMeter")
-                    .HasColumnType("decimal(18, 2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<string>("Kleur")
                         .HasColumnType("nvarchar(max)");

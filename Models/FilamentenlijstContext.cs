@@ -39,6 +39,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
                 entity.Property(e => e.AantalKg).HasColumnType("decimal(18, 2)");
 
                 entity.Property(e => e.KostPerRol).HasColumnType("decimal(18, 2)");
+                entity.Property(e => e.AantalMeter).HasColumnType("decimal(18, 2)");
             });
 
             OnModelCreatingPartial(modelBuilder);

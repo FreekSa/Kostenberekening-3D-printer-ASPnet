@@ -53,7 +53,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Type,Kleur,KostPerRol,AantalKg")] Filament filament)
+        public async Task<IActionResult> Create([Bind("Id,Type,Kleur,KostPerRol,AantalKg,AantalMeter")] Filament filament)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Type,Kleur,KostPerRol,AantalKg")] Filament filament)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Type,Kleur,KostPerRol,AantalKg,AantalMeter")] Filament filament)
         {
             if (id != filament.Id)
             {

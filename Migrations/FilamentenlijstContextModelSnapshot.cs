@@ -29,6 +29,9 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
                     b.Property<decimal>("AantalKg")
                         .HasColumnType("decimal(18, 2)");
 
+                    b.Property<decimal>("AantalMeter")
+                        .HasColumnType("decimal(18, 2)");
+
                     b.Property<string>("Kleur")
                         .HasColumnType("nvarchar(max)");
 

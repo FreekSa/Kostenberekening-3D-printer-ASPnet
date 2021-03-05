@@ -12,10 +12,11 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<string>(nullable: true),
-                    Kleur = table.Column<string>(nullable: true),
+                    Type = table.Column<string>(nullable: false),
+                    Kleur = table.Column<string>(nullable: false),
                     KostPerRol = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
-                    AantalKg = table.Column<decimal>(type: "decimal(18, 2)", nullable: false)
+                    AantalKg = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
+                    AantalMeter = table.Column<decimal>(type: "decimal(18, 2)", nullable: false)
                 },
                 constraints: table =>
                 {
