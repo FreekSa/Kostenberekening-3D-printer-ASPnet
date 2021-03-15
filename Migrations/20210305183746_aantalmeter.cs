@@ -8,7 +8,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
         {
             migrationBuilder.AlterColumn<decimal>(
                 name: "AantalMeter",
-                table: "Filamenten",
+                table: "Stock",
                 type: "decimal(18, 2)",
                 nullable: false,
                 oldClrType: typeof(decimal),
@@ -19,7 +19,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
         {
             migrationBuilder.AlterColumn<decimal>(
                 name: "AantalMeter",
-                table: "Filamenten",
+                table: "Stock",
                 type: "decimal(18,2)",
                 nullable: false,
                 oldClrType: typeof(decimal),

@@ -25,9 +25,9 @@ namespace Kostenberekening_3D_printer_ASPnet
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<Services.FilamentService>();
-            services.AddControllersWithViews();
             services.AddDbContext<FilamentenlijstContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Filamentenlijst")));
             services.AddTransient<IFilamentenRepository, SQLFilamentenRepository>();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

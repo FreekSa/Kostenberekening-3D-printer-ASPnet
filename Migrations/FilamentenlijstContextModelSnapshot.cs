@@ -43,7 +43,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Filamenten");
+                    b.ToTable("Stock");
                 });
 #pragma warning restore 612, 618
         }

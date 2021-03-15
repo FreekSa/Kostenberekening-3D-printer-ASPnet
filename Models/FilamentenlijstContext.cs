@@ -10,25 +10,14 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
 {
     public partial class FilamentenlijstContext : DbContext
     {
-        //public FilamentenlijstContext()
-        //{
-        //}
 
         public FilamentenlijstContext(DbContextOptions<FilamentenlijstContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<Filament> Filamenten { get; set; }
-
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Filamentenlijst;Trusted_Connection=True;");
-//            }
-//        }
+        //public virtual DbSet<Filament> Filamenten { get; set; }
+        public virtual DbSet<Filament> Stock { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

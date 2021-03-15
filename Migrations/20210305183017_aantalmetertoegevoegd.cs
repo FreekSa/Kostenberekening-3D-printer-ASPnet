@@ -8,7 +8,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
         {
             migrationBuilder.AddColumn<decimal>(
                 name: "AantalMeter",
-                table: "Filamenten",
+                table: "Stock",
                 nullable: false,
                 defaultValue: 0m);
         }
@@ -17,7 +17,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "AantalMeter",
-                table: "Filamenten");
+                table: "Stock");
         }
     }
 }

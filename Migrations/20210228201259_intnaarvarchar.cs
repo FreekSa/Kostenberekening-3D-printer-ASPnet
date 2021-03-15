@@ -7,7 +7,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Filamenten",
+                name: "Stock",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -20,14 +20,14 @@ namespace Kostenberekening_3D_printer_ASPnet.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Filamenten", x => x.ID);
+                    table.PrimaryKey("PK_Stock", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Filamenten");
+                name: "Stock");
         }
     }
 }

@@ -15,17 +15,17 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
 
         public Filament Add(Filament filament)
         {
-            context.Filamenten.Add(filament);
+            context.Stock.Add(filament);
             context.SaveChanges();
             return filament;
         }
 
         public Filament Delete(int id)
         {
-            Filament filament = context.Filamenten.Find(id);
+            Filament filament = context.Stock.Find(id);
             if(filament != null)
             {
-                context.Filamenten.Remove(filament);
+                context.Stock.Remove(filament);
                 context.SaveChanges();
             }
             return filament;
@@ -33,17 +33,17 @@ namespace Kostenberekening_3D_printer_ASPnet.Models
 
         public Filament GetFilament(int id)
         {
-            return context.Filamenten.Find(id);
+            return context.Stock.Find(id);
         }
 
         public IEnumerable<Filament> GetFilamenten()
         {
-            return context.Filamenten;
+            return context.Stock;
         }
 
         public Filament Update(Filament gewijzigdFilament)
         {
-            var filament = context.Filamenten.Attach(gewijzigdFilament);
+            var filament = context.Stock.Attach(gewijzigdFilament);
             filament.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
             return gewijzigdFilament;

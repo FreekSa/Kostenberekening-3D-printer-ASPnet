@@ -21,7 +21,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
         // GET: Filament
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Filamenten.ToListAsync());
+            return View(await _context.Stock.ToListAsync());
         }
 
         // GET: Filament/Details/5
@@ -32,7 +32,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
                 return NotFound();
             }
 
-            var filament = await _context.Filamenten
+            var filament = await _context.Stock
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (filament == null)
             {
@@ -72,7 +72,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
                 return NotFound();
             }
 
-            var filament = await _context.Filamenten.FindAsync(id);
+            var filament = await _context.Stock.FindAsync(id);
             if (filament == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
                 return NotFound();
             }
 
-            var filament = await _context.Filamenten
+            var filament = await _context.Stock
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (filament == null)
             {
@@ -138,15 +138,15 @@ namespace Kostenberekening_3D_printer_ASPnet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var filament = await _context.Filamenten.FindAsync(id);
-            _context.Filamenten.Remove(filament);
+            var filament = await _context.Stock.FindAsync(id);
+            _context.Stock.Remove(filament);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool FilamentExists(int id)
         {
-            return _context.Filamenten.Any(e => e.Id == id);
+            return _context.Stock.Any(e => e.Id == id);
         }
     }
 }
